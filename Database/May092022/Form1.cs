@@ -5,12 +5,12 @@ using System.Data;
 
 namespace Database.May092022
 {
-    public partial class Product : Form
+    public partial class ProductForm : Form
     {
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
-        public Product()
+        public ProductForm()
         {
             InitializeComponent();
             con = new SqlConnection(@"Server = LAPTOP-C6NB9IB2\SQLEXPRESS; database = TQTraining; Integrated Security = True"); ;
@@ -189,6 +189,11 @@ namespace Database.May092022
             txtProductId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtPrice.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void Product_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
