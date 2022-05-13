@@ -48,7 +48,7 @@ namespace Database.May112022
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(57, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 24);
+            this.label1.Size = new System.Drawing.Size(26, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
@@ -66,7 +66,7 @@ namespace Database.May112022
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(57, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 24);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Designation";
             // 
@@ -109,6 +109,7 @@ namespace Database.May112022
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -118,13 +119,14 @@ namespace Database.May112022
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(57, 160);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 24);
+            this.label4.Size = new System.Drawing.Size(53, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Salary";
             // 
@@ -136,6 +138,7 @@ namespace Database.May112022
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSalary
             // 
