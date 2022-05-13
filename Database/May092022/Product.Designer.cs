@@ -1,7 +1,7 @@
-﻿/*
+﻿
 namespace Database.May092022
 {
-    partial class Product
+    partial class ProductForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -181,7 +181,7 @@ namespace Database.May092022
             this.btnShowAllProducts.UseVisualStyleBackColor = false;
             this.btnShowAllProducts.Click += new System.EventHandler(this.btnShowAllProducts_Click);
             // 
-            // ADONETDemo
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -200,7 +200,7 @@ namespace Database.May092022
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ADONETDemo";
+            this.Name = "ProductForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADO.NET Demo";
@@ -228,4 +228,3 @@ namespace Database.May092022
     }
 }
 
-*/

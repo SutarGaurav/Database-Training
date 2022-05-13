@@ -1,16 +1,16 @@
-﻿/*using System;
+﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;  //add namespace
 using System.Data;
 
-namespace Database
+namespace Database.May092022
 {
-    public partial class ADONETDemo : Form
+    public partial class ProductForm1 : Form
     {
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
-        public ADONETDemo()
+        public ProductForm1()
         {
             InitializeComponent();
             con = new SqlConnection(@"Server = LAPTOP-C6NB9IB2\SQLEXPRESS; database = TQTraining; Integrated Security = True"); ;
@@ -25,7 +25,7 @@ namespace Database
         {
             try
             {
-                string qry = "insert into Product values (@id,@name,@price)";
+                string qry = "insert into ProductTableAA values (@id,@name,@price)";
                 cmd = new SqlCommand(qry, con);
                 cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtProductId.Text));
                 cmd.Parameters.AddWithValue("@name", txtName.Text);
@@ -38,7 +38,7 @@ namespace Database
                     txtProductId.Enabled = true;
                     ClearAll();
                 }
-                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -52,14 +52,14 @@ namespace Database
         {
             try
             {
-                string qry = "select * from Product where Id= @id"; //ha sql table madhala Id aahe.
+                string qry = "select * from ProductTableAA where Id= @id"; //ha sql table madhala Id aahe.
                 cmd = new SqlCommand(qry, con);
                 cmd.Parameters.AddWithValue("@id", int.Parse(txtProductId.Text));
                 con.Open();
                 dr = cmd.ExecuteReader();
-                if(dr.HasRows)
+                if (dr.HasRows)
                 {
-                    while(dr.Read())
+                    while (dr.Read())
                     {
                         txtName.Text = dr["Name"].ToString();
                         txtPrice.Text = dr["Price"].ToString();
@@ -81,7 +81,7 @@ namespace Database
         {
             try
             {
-                string qry = "update Product set Name = @name, Price = @price where Id = @id";
+                string qry = "update ProductTableAA set Name = @name, Price = @price where Id = @id";
                 cmd = new SqlCommand(qry, con);
                 cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtProductId.Text));
                 cmd.Parameters.AddWithValue("@name", txtName.Text);
@@ -105,11 +105,11 @@ namespace Database
         {
             try
             {
-                string qry = "delete from Product where Id = @id";
+                string qry = "delete from ProductTableAA where Id = @id";
                 cmd = new SqlCommand(qry, con);
                 cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtProductId.Text));
-                *//*cmd.Parameters.AddWithValue("@name", txtName.Text);
-                cmd.Parameters.AddWithValue("@price", Convert.ToInt32(txtPrice.Text));*//* //fakt ekach parameter aahe .Id delete karaycahy
+                cmd.Parameters.AddWithValue("@name", txtName.Text);
+                cmd.Parameters.AddWithValue("@price", Convert.ToInt32(txtPrice.Text)); //fakt ekach parameter aahe .Id delete karaycahy
                 con.Open();
                 int res = cmd.ExecuteNonQuery();
                 if (res == 1)
@@ -129,7 +129,7 @@ namespace Database
         {
             try
             {
-                string qry = "select max(Id) from Product";
+                string qry = "select max(Id) from ProductTableAA";
                 cmd = new SqlCommand(qry, con);
                 con.Open();
                 object obj = cmd.ExecuteScalar();
@@ -156,24 +156,18 @@ namespace Database
 
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnShowAllProducts_Click(object sender, EventArgs e)
         {
             try
             {
-                string qry = "select * from Product";
+                string qry = "select * from ProductTableAA";
                 cmd = new SqlCommand(qry, con);
                 con.Open();
                 dr = cmd.ExecuteReader();
-                if(dr.HasRows)
+                if (dr.HasRows)
                 {
                     DataTable table = new DataTable();
-                    table.Load(dr);                    
+                    table.Load(dr);
                     dataGridView1.DataSource = table;
                 }
                 else
@@ -197,4 +191,3 @@ namespace Database
         }
     }
 }
-*/

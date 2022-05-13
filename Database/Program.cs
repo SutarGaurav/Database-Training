@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Database
+namespace Database.May092022
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Database
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeForm());
+            Application.Run(new ProductForm1());
         }
     }
 }
